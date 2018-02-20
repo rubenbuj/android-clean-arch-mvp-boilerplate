@@ -17,8 +17,8 @@ public interface INewsRepository {
      */
     Observable<List<News>> newsList();
 
-//    /**
-//     * Get an {@link io.reactivex.Observable} which will emit a single News object
-//     */
-//    Observable<News> newsDetail(String newsId);
+    /**
+     * Get an {@link io.reactivex.Observable} which will emit a single News object
+     */
+    Observable<News> newsDetail(String newsKey);
 }

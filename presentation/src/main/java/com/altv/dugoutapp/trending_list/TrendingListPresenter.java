@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 
 import com.altv.dugout_domain.model.News;
+import com.altv.dugout_domain.use_cases.GetNewsDetailUseCase;
 import com.altv.dugout_domain.use_cases.GetNewsListUseCase;
 import com.altv.dugoutapp.AndroidApplication;
 import com.altv.dugoutapp.Params;
@@ -26,7 +27,13 @@ import io.reactivex.observers.DisposableObserver;
 public class TrendingListPresenter extends BasePresenter<ITrendingListView> implements ITrendingListPresenter<ITrendingListView> {
 
     @Inject GetNewsListUseCase getNewsListUseCase;
+    @Inject GetNewsDetailUseCase getNewsDetailUseCase;
 
+    enum State {
+        INIT, LIST, ERROR
+    }
+
+    State state = State.INIT;
     List<News> data;
 
     /*
@@ -76,18 +83,20 @@ public class TrendingListPresenter extends BasePresenter<ITrendingListView> impl
     public void initialiseData() {
         getNewsListUseCase.execute(new DisposableObserver<List<News>>() {
             @Override
-            public void onNext(final List<News> news) {
+            public void onNext(final List<News> newsList) {
                 ifViewAttached(new ViewAction<ITrendingListView>() {
                     @Override
                     public void run(@NonNull ITrendingListView view) {
-                        view.setListData(news);
-                        data = news;
+                        view.setListData(newsList);
+                        data = newsList;
+                        state = State.LIST;
                     }
                 });
             }
 
             @Override
             public void onError(final Throwable e) {
+                state = State.ERROR;
                 ifViewAttached(new ViewAction<ITrendingListView>() {
                     @Override
                     public void run(@NonNull ITrendingListView view) {
@@ -102,7 +111,7 @@ public class TrendingListPresenter extends BasePresenter<ITrendingListView> impl
     }
 
     private void navigateToDetail(int position) {
-        if(data==null || data.size()==0) {
+        if(state != State.LIST) {
             ifViewAttached(new ViewAction<ITrendingListView>() {
                 @Override
                 public void run(@NonNull ITrendingListView view) {
