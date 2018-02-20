@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/news_detail_scroll_view">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:id="@+id/news_detail_main_image"
+                    android:layout_alignParentTop="true" />
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="85dp"
+                    android:id="@+id/news_detail_team_logo"
+                    android:background="#002561"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/news_detail_main_image"
+                    android:layout_marginTop="-35dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="20dp"
+                    android:padding="6dp"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/news_detail_team_logo"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:paddingHorizontal="20dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:id="@+id/news_detail_team_menu_button"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/if_menu2_309052" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/news_detail_team_name"
+                        android:layout_marginBottom="10dp"
+                        style="@style/altv_medium_headline_text_style"
+                        android:maxLines="1"
+                        android:text="MANCHESTER CITY"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/news_detail_date"
+                        android:layout_below="@+id/news_detail_team_name"
+                        style="@style/altv_large_text_style"
+                        android:maxLines="1"
+                        android:text="21st Dec 2017"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:id="@+id/news_detail_line_separator"
+                        android:layout_below="@+id/news_detail_date"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@color/color_black" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/news_detail_title"
+                        android:layout_below="@+id/news_detail_line_separator"
+                        style="@style/altv_large_headline_text_style"
+                        android:maxLines="2"
+                        android:text="@string/lorem_ipsum_uppercase"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/news_detail_description"
+                        android:layout_below="@+id/news_detail_title"
+                        style="@style/altv_large_text_style"
+                        android:maxLines="5"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/lorem_ipsum"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@color/color_black"
+            />
+
+        <include layout="@layout/reaction_symbols_view"
+            android:id="@+id/news_detail_reaction_symbols_layout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/news_detail_close_button"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="@color/color_black"
+        android:alpha="0.7"
+        android:padding="10dp"
+        android:layout_margin="20dp"
+        android:src="@drawable/ic_close_white" />
+
+</RelativeLayout>

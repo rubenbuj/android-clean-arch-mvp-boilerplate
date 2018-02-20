@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="520dp"
+    android:background="@color/color_grey_light"
+    android:layout_marginBottom="12dp"
+    android:layout_marginTop="12dp"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/trending_list_item_image"
+        android:layout_below="@+id/trending_list_item_team_name"/>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="75dp"
+        android:id="@+id/trending_list_item_team_logo"
+        android:background="#002561"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginEnd="6dp"
+        android:padding="6dp"
+        android:paddingBottom="6dp" />
+
+    <TextView
+        android:id="@+id/trending_list_item_team_name"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        style="@style/altv_small_headline_text_style"
+        android:background="@color/color_white"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="6dp"
+        android:gravity="center_vertical|start"
+        android:layout_toRightOf="@+id/trending_list_item_team_logo"
+        />
+
+    <RelativeLayout
+        android:id="@+id/trending_list_item_news_layout"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:background="@color/color_white"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/trending_list_item_news_titles_layout"
+                android:padding="30dp"
+                android:layout_alignParentTop="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/trending_list_item_news_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/altv_medium_headline_text_style"
+                    android:maxLines="2"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical|start"
+                    android:text="@string/lorem_ipsum_uppercase"
+                    />
+
+                <TextView
+                    android:id="@+id/trending_list_item_news_subtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    style="@style/altv_medium_text_style"
+                    android:gravity="center_vertical|start"
+                    android:maxLines="3"
+                    android:text="@string/lorem_ipsum"
+                    />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/trending_list_item_react_button"
+                android:background="@color/color_black"
+                android:layout_alignParentBottom="true"
+                android:text="@string/trending_list_item_react"
+                android:textColor="@color/color_white"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+
+            <include layout="@layout/reaction_symbols_view"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_above="@+id/trending_list_item_react_button"
+                android:layout_marginBottom="20dp"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:background="@color/color_black"
+            android:textColor="@color/color_white"
+            android:text="@string/trending_list_item_top_trending"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
