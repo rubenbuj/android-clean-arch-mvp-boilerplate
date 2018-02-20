@@ -5,7 +5,5 @@ package com.altv.dugoutapp;
  */
 
 public interface Params {
-
     String TOP_TRENDING_SELECTED_NEWS = "top_trending.news_selected";
-
 }

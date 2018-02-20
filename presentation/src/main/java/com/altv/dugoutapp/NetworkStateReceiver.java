@@ -1,4 +1,4 @@
-package com.altv.dugout_data.network;
+package com.altv.dugoutapp;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

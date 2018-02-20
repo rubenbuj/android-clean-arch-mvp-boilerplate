@@ -1,4 +1,4 @@
-package com.altv.dugoutapp;
+package com.altv.dugoutapp.mvp;
 
 import android.os.Bundle;
 
@@ -16,7 +16,17 @@ import com.hannesdorfmann.mosby3.mvp.MvpView;
 
 public class MvpFactory {
 
-    public static MvpPresenter getPresenterInstance(MvpView view, StateMachine stateMachineHandler, Bundle args) {
+    static MvpFactory instance;
+
+    public static MvpFactory getInstance() {
+        if(instance==null) instance = new MvpFactory();
+
+        return instance;
+    }
+
+    private MvpFactory() {}
+
+    public MvpPresenter getPresenter(MvpView view, StateMachine stateMachineHandler, Bundle args) {
         if(view instanceof ITrendingListView) {
             return new TrendingListPresenter(stateMachineHandler, args);
         }

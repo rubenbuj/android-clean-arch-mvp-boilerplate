@@ -3,7 +3,6 @@ package com.altv.dugoutapp.mvp;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 
-import com.altv.dugoutapp.MvpFactory;
 import com.altv.dugoutapp.Utils;
 import com.altv.dugoutapp.state_machines.StateMachine;
 import com.hannesdorfmann.mosby3.conductor.viewstate.MvpViewStateController;
@@ -54,7 +53,7 @@ public abstract class BaseView<V extends IBaseView, P extends IBasePresenter<V>,
     @NonNull
     @Override
     public P createPresenter() {
-        return (P)MvpFactory.getPresenterInstance(this, this.stateMachine, getArgs());
+        return (P)MvpFactory.getInstance().getPresenter(this, this.stateMachine, getArgs());
     }
 
     @NonNull
