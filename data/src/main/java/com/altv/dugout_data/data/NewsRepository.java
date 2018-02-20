@@ -30,15 +30,12 @@ public class NewsRepository implements INewsRepository {
         this.apiDataModelMapper = apiDataModelMapper;
     }
 
-    private List<News> dataCache;
-
     @Override
     public Observable<List<News>> newsList() {
         return newsApiDataSource.getPlaylistLatest().map(new Function<PlaylistContainer, List<News>>() {
             @Override
             public List<News> apply(PlaylistContainer playlistContainer) throws Exception {
-                dataCache = apiDataModelMapper.toModel(playlistContainer);
-                return dataCache;
+                return apiDataModelMapper.toModel(playlistContainer);
             }
         });
     }

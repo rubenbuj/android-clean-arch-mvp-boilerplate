@@ -1,16 +1,7 @@
 package com.altv.dugoutapp;
 
-import com.altv.dugout_data.data.IDataService;
-import com.altv.dugoutapp.model.BoxsetCollection;
-import com.altv.dugoutapp.model.BoxsetCollections;
-import com.altv.dugoutapp.model.ClubOrPlayerDetail;
-import com.altv.dugoutapp.model.ClubsOrPlayers;
-import com.altv.dugoutapp.model.PlaylistContainer;
-
 import org.junit.Before;
 import org.junit.Test;
-
-import io.reactivex.Observable;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -18,8 +9,6 @@ import io.reactivex.Observable;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class APIModelTest {
-
-    IDataService dataService;
 
     @Before
     public void setUp() {
