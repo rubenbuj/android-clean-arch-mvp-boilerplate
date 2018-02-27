@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 
 import com.altv.dugout_domain.model.News;
+import com.altv.dugout_domain.use_cases.DefaultObserver;
 import com.altv.dugout_domain.use_cases.GetNewsDetailUseCase;
 import com.altv.dugout_domain.use_cases.GetNewsListUseCase;
 import com.altv.dugoutapp.AndroidApplication;
@@ -18,7 +19,6 @@ import java.util.List;
 import javax.inject.Inject;
 
 import au.com.ds.ef.err.LogicViolationError;
-import io.reactivex.observers.DisposableObserver;
 
 /**
  * Created by rubenbujalance on 01/02/2018.
@@ -81,7 +81,7 @@ public class TrendingListPresenter extends BasePresenter<ITrendingListView> impl
 
     @Override
     public void initialiseData() {
-        getNewsListUseCase.execute(new DisposableObserver<List<News>>() {
+        getNewsListUseCase.execute(new DefaultObserver<List<News>>() {
             @Override
             public void onNext(final List<News> newsList) {
                 ifViewAttached(new ViewAction<ITrendingListView>() {

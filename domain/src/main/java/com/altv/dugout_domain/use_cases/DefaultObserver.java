@@ -6,7 +6,7 @@ import io.reactivex.observers.DisposableObserver;
  * Created by rubenbujalance on 13/02/2018.
  */
 
-public class DefaultObserver extends DisposableObserver {
+public class DefaultObserver<T> extends DisposableObserver<T> {
     @Override
     public void onNext(Object o) {
         //no default implementation
