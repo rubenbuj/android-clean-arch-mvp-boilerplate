@@ -1,7 +1,6 @@
 package com.altv.dugoutapp.trending_list;
 
 import com.altv.dugout_domain.model.News;
-import com.altv.dugoutapp.model.PlaylistContainer;
 import com.altv.dugoutapp.mvp.IBaseView;
 
 import java.util.List;

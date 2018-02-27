@@ -8,7 +8,7 @@ import io.reactivex.observers.DisposableObserver;
 
 public class DefaultObserver<T> extends DisposableObserver<T> {
     @Override
-    public void onNext(Object o) {
+    public void onNext(T o) {
         //no default implementation
     }
 
